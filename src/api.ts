@@ -1,19 +1,15 @@
 import axios from "axios";
 
-export const getData = async () => {
-  try {
-    const res = await axios.get(
-      "https://api.upbit.com/v1/market/all?isDetails=false",
-      {
-        headers: {
-          Accept: "application/json",
-        },
-      }
-    );
+const BASED_URL = `https://api.coinpaprika.com/v1`;
 
-    console.log(
-      res.data.filter((coin: { market: string }) => coin.market.includes("KRW"))
-    );
+export const getAllCoin = async () => {
+  try {
+    const res = await axios.get(`${BASED_URL}/coins`, {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+    console.log(res.data);
   } catch (error) {
     console.log(error);
   }
