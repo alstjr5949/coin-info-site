@@ -10,7 +10,7 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:coinId/*" element={<Coin />} />
+        <Route path="coin/:coinId/*" element={<Coin />} />
       </Routes>
     </BrowserRouter>
   );

@@ -27,7 +27,7 @@ const NavList = styled.ul`
 `;
 
 const NavItem = styled(Link)`
-  font-size: 20px;
+  font-size: 18px;
 `;
 
 const Nav = () => {
@@ -37,7 +37,7 @@ const Nav = () => {
         <StyledNav>
           <Logo to="/" />
           <NavList>
-            <NavItem to="/coin">Markets</NavItem>
+            <NavItem to="/coin/bit-coin">Markets</NavItem>
             <NavItem to="/article">Article</NavItem>
             <NavItem to="/history">History</NavItem>
             <NavItem to="/more">More</NavItem>
