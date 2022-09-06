@@ -1,14 +1,19 @@
 import ReactDOM from "react-dom/client";
 import App from "./App";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import "./font/font.css";
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
   html {
     font-size: 10px;
-    font-family: 'IM_Hyemin-Bold';
+    font-family: "GmarketSansMedium";
+  }
+  body {
+    background-color: #FCF6F5;
   }
   * {
     box-sizing: border-box;
@@ -38,12 +43,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <>
-    <GlobalStyle />
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <GlobalStyle />
+      <App />
+    </QueryClientProvider>
   </>
 );
