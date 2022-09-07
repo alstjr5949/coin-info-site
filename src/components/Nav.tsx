@@ -1,12 +1,21 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import CommonWrapper from "../common/commonWrapper";
+import { isDarkAtom } from "../atom";
 
-import LogoImg from "../imgs/logo.svg";
+import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+
+import styled from "styled-components";
+
+import CommonWrapper from "../common/commonWrapper";
+import Logo from "./Logo";
 
 const Header = styled.header`
   display: flex;
   justify-content: center;
+`;
+
+const NavWrapper = styled(CommonWrapper)`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const StyledNav = styled.nav`
@@ -14,36 +23,44 @@ const StyledNav = styled.nav`
   align-items: center;
 `;
 
-const Logo = styled(Link)`
+const LogoLink = styled(Link)`
   width: 80px;
   height: 80px;
   margin-right: 80px;
-  background-image: url(${LogoImg});
 `;
 
 const NavList = styled.ul`
   display: flex;
-  gap: 40px;
 `;
 
 const NavItem = styled(Link)`
-  font-size: 18px;
+  font-size: 16px;
+`;
+
+const ThemeModeBtn = styled.button`
+  width: 40px;
+  color: ${(props) => props.theme.nameColor};
 `;
 
 const Nav = () => {
+  const [isDark, setIsDark] = useRecoilState(isDarkAtom);
+
+  const handleToggleBtnClick = () => {
+    setIsDark((prev) => !prev);
+  };
   return (
     <Header>
-      <CommonWrapper>
+      <NavWrapper>
         <StyledNav>
-          <Logo to="/" />
+          <LogoLink to="/">
+            <Logo strokeColor={isDark ? "white" : "black"} />
+          </LogoLink>
           <NavList>
             <NavItem to="/coin/bit-coin">Markets</NavItem>
-            <NavItem to="/article">Article</NavItem>
-            <NavItem to="/history">History</NavItem>
-            <NavItem to="/more">More</NavItem>
           </NavList>
         </StyledNav>
-      </CommonWrapper>
+        <ThemeModeBtn onClick={handleToggleBtnClick}> 토글버튼</ThemeModeBtn>
+      </NavWrapper>
     </Header>
   );
 };
