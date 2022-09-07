@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 
 import Coin from "../pages/Coin";
@@ -12,6 +14,7 @@ const Router = () => {
         <Route path="/" element={<Home />} />
         <Route path="coin/:coinId/*" element={<Coin />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
