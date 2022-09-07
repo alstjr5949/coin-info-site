@@ -1,11 +1,13 @@
-import { useEffect } from "react";
-import { getData } from "../api";
+import Banner from "../components/Banner";
+import CoinBoard from "../components/CoinBoard";
 
 const Home = () => {
-  useEffect(() => {
-    getData();
-  });
-  return <h1>Home</h1>;
+  return (
+    <>
+      <Banner />
+      <CoinBoard />
+    </>
+  );
 };
 
 export default Home;
