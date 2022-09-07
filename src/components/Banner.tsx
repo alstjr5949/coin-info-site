@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import CommonWrapper from "../common/commonWrapper";
+import EmphasizeText from "../common/emphasize";
 
 import BannerImg from "../imgs/banner.jpg";
 
@@ -32,14 +33,10 @@ const BannerTextBox = styled.div`
 const WebTitle = styled.h1``;
 
 const WebIntro = styled.p`
-  font-size: 45px;
+  font-size: 40px;
   line-height: 1.5;
   font-weight: 700;
   color: #eee;
-`;
-
-const EmphasizeText = styled.span`
-  color: #7b9acc;
 `;
 
 const CoinInfoLink = styled(Link)`
@@ -48,7 +45,7 @@ const CoinInfoLink = styled(Link)`
   width: 120px;
   height: 50px;
   color: #eee;
-  background-color: #7b9acc;
+  background-color: ${(props) => props.theme.accentColor};
   margin-top: 20px;
   font-size: 14px;
   line-height: 50px;
