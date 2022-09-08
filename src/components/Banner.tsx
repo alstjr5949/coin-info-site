@@ -61,7 +61,7 @@ const Banner = () => {
           <WebIntro>
             이제 <EmphasizeText>캣코인</EmphasizeText>에서 확인하세요.
           </WebIntro>
-          <CoinInfoLink to="coin/bit-coin">코인 둘러보기</CoinInfoLink>
+          <CoinInfoLink to="coin/KRW-BTC">코인 둘러보기</CoinInfoLink>
         </BannerTextBox>
       </CommonWrapper>
     </StyledBanner>

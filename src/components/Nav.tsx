@@ -11,6 +11,7 @@ import Logo from "./Logo";
 const Header = styled.header`
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 `;
 
 const NavWrapper = styled(CommonWrapper)`
@@ -56,7 +57,7 @@ const Nav = () => {
             <Logo strokeColor={isDark ? "white" : "black"} />
           </LogoLink>
           <NavList>
-            <NavItem to="/coin/bit-coin">Markets</NavItem>
+            <NavItem to="/coin/KRW-BTC">Markets</NavItem>
           </NavList>
         </StyledNav>
         <ThemeModeBtn onClick={handleToggleBtnClick}> 토글버튼</ThemeModeBtn>
