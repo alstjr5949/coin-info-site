@@ -18,17 +18,13 @@ const ArrowAnimation = keyframes`
   }
 `;
 
-const CoinWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0;
+const CoinWrapper = styled(CommonWrapper)`
+  margin: 50px auto;
 `;
 
 const CoinBoardTitle = styled.h2``;
 
 const CoinBoardText = styled.p`
-  width: 1024px;
   font-size: 25px;
   font-weight: 700;
 `;
@@ -45,7 +41,6 @@ const CoinBoardBox = styled.ul<{ boardHeight: string }>`
 
 const Coin = styled.li`
   font-size: 12px;
-  padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   border-radius: 10px;
@@ -54,6 +49,9 @@ const Coin = styled.li`
   a {
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
   }
   &:hover {
     background-color: ${(props) => props.theme.accentColor};
@@ -68,12 +66,8 @@ const CoinImg = styled.img`
 `;
 
 const MoreBtn = styled.button`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-top: 30px;
   font-size: 14px;
-  width: 50px;
   color: inherit;
   svg {
     animation: ${ArrowAnimation} 1s infinite linear alternate;
@@ -81,13 +75,9 @@ const MoreBtn = styled.button`
 `;
 
 interface ICoin {
-  id: string;
-  name: string;
-  symbol: string;
-  rank: number;
-  is_new: boolean;
-  is_active: boolean;
-  type: string;
+  market: string;
+  korean_name: string;
+  english_name: string;
 }
 
 const CoinBoard = () => {
@@ -108,6 +98,8 @@ const CoinBoard = () => {
 
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", getAllCoin);
 
+  const krwCoinData = data?.filter((v) => v.market.includes("KRW"));
+
   return (
     <>
       {isLoading ? (
@@ -123,20 +115,23 @@ const CoinBoard = () => {
           </CoinBoardText>
           <CommonWrapper>
             <CoinBoardBox boardHeight={`${boardHeight}px`}>
-              {data?.map((coin) => (
-                <Coin key={coin.id}>
-                  <Link to={`/coin/${coin.id}`}>
+              {krwCoinData?.map((coin) => (
+                <Coin key={coin.market}>
+                  <Link to={`/coin/${coin.market}`}>
                     <CoinImg
-                      src={`https://coinicons-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                      src={`https://coinicons-api.vercel.app/api/icon/${coin.market
+                        .slice(4, 7)
+                        .toLowerCase()}`}
+                      alt={coin.korean_name}
                     />
-                    {coin.name}
+                    {coin.korean_name}
                   </Link>
                 </Coin>
               ))}
             </CoinBoardBox>
           </CommonWrapper>
           <MoreBtn type="button" onClick={handleMoreBtnClick}>
-            {boardFlag ? "더보기" : "줄이기"}
+            <p>{boardFlag ? "더보기" : "줄이기"}</p>
             <ArrowIcon boardFlag={boardFlag} />
           </MoreBtn>
         </CoinWrapper>
