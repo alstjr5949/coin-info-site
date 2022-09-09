@@ -2,8 +2,8 @@ import styled from "styled-components";
 import CommonWrapper from "../common/commonWrapper";
 
 const StyledFooter = styled.footer`
-  background-color: #061e2c;
-  color: #eee;
+  background-color: ${(props) => props.theme.boardColor};
+  color: ${(props) => props.theme.nameColor};
 `;
 
 const LinkSection = styled.section`

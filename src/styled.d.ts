@@ -5,6 +5,7 @@ declare module "styled-components" {
     bgColor: string;
     tickerColor: string;
     nameColor: string;
+    boardColor: string;
     accentColor?: string;
   }
 }
