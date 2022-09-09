@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/coin-info-site/static/css/main.082b34c2.css",
+    "main.js": "/coin-info-site/static/js/main.2c1aa6d4.js",
+    "static/media/banner.jpg": "/coin-info-site/static/media/banner.9c3d08c81d7e34580bc1.jpg",
+    "index.html": "/coin-info-site/index.html",
+    "main.082b34c2.css.map": "/coin-info-site/static/css/main.082b34c2.css.map",
+    "main.2c1aa6d4.js.map": "/coin-info-site/static/js/main.2c1aa6d4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.082b34c2.css",
+    "static/js/main.2c1aa6d4.js"
+  ]
+}
