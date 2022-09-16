@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# 코인정보 제공 사이트 캣코인
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 배포 URL : https://alstjr5949.github.io/coin-info-site/
 
-## Available Scripts
+업비트 오픈 API를 사용해 다양한 코인의 시세정보를 제공해주는 사이트입니다.
 
-In the project directory, you can run:
+## 1. Preview
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 더보기 버튼
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Coin 리스트를 담고 있는 보드에 overflow-y 값을 hidden으로 주었습니다.
+- board의 height 값을 props로 받아서 사용하고, 더보기 버튼을 누르면 height state를 업데이트 해줬습니다.
+- 또한 일정 수준의 코인정보를 보여주게 되면 줄이기 버튼을 통해 처음 상태로 돌아갈 수 있게 구현했습니다.
 
-### `npm test`
+| 더보기 버튼 |  
+| :-----------------------------------------------:
+| ![더보기 버튼 시현 영상](https://im4.ezgif.com/tmp/ezgif-4-2e1e7cfd86.gif) |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 다크모드 라이트모드 버튼
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Recoil 전역상태관리 툴을 사용하여 다크모드, 라이트모드 버튼을 만들었습니다.
+- 다크모드, 라이트모드의 색상은 theme.ts, styled.d.ts 파일로 관리했습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| 다크모드, 라이트모드 버튼 |  
+| :-----------------------------------------------:
+| ![다크모드 라이트모드 버튼 시현 영상](https://im4.ezgif.com/tmp/ezgif-4-d970078b4c.gif) |
 
-### `npm run eject`
+### 데이터 시각화
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Recoil 전역상태관리 툴을 사용하여 다크모드, 라이트모드 버튼을 만들었습니다.
+- 다크모드, 라이트모드의 색상은 theme.ts, styled.d.ts 파일로 관리했습니다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| 다크모드, 라이트모드 버튼 |  
+| :-----------------------------------------------:
+| ![다크모드 라이트모드 버튼 시현 영상](https://im4.ezgif.com/tmp/ezgif-4-d970078b4c.gif) |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 2. 사용기술
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[기술]
 
-## Learn More
+- React
+- TypeScript
+- Styled-Component
+- Recoil
+- React Query
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 3. 개발일정
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+기간 : 2022.09.04 ~ 2022. 09. 16 (12일)
+
+## 4. 개발하며 힘들었던 점
