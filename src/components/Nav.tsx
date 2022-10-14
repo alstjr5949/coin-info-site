@@ -10,8 +10,7 @@ import Logo from "./Logo";
 import { useState } from "react";
 
 const Header = styled.header`
-  display: flex;
-  justify-content: center;
+  width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 `;
 

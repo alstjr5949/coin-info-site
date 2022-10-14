@@ -2,6 +2,8 @@ import styled from "styled-components";
 import CommonWrapper from "../common/commonWrapper";
 
 const StyledFooter = styled.footer`
+  width: 100%;
+  overflow: hidden;
   background-color: ${(props) => props.theme.boardColor};
   color: ${(props) => props.theme.nameColor};
 `;

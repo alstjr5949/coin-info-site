@@ -19,6 +19,8 @@ const ArrowAnimation = keyframes`
 `;
 
 const CoinWrapper = styled(CommonWrapper)`
+  width: 100%;
+  overflow: hidden;
   margin: 50px auto;
 `;
 
@@ -106,13 +108,15 @@ const CoinBoard = () => {
         "Loading..."
       ) : (
         <CoinWrapper>
-          <CoinBoardTitle className="ir">
-            갖고 있는 코인 정보 리스트
-          </CoinBoardTitle>
-          <CoinBoardText>
-            <EmphasizeText>캣코인</EmphasizeText>에선 이런{" "}
-            <EmphasizeText>코인</EmphasizeText>들의 정보를 다뤄요.
-          </CoinBoardText>
+          <CommonWrapper>
+            <CoinBoardTitle className="ir">
+              갖고 있는 코인 정보 리스트
+            </CoinBoardTitle>
+            <CoinBoardText>
+              <EmphasizeText>캣코인</EmphasizeText>에선 이런{" "}
+              <EmphasizeText>코인</EmphasizeText>들의 정보를 다뤄요.
+            </CoinBoardText>
+          </CommonWrapper>
           <CommonWrapper>
             <CoinBoardBox boardHeight={`${boardHeight}px`}>
               {krwCoinData?.map((coin) => (
